@@ -30,7 +30,7 @@ var GroceryList = (function (_React$Component) {
 
     _get(Object.getPrototypeOf(GroceryList.prototype), "constructor", this).call(this, props);
     this.state = {
-      groceries: [{ name: "Apples" }]
+      groceries: [{ name: "Bran Flakes" }, { name: "Low/No Fat Cheese" }, { name: "Sweet Potatoe" }, { name: "Yams" }]
     };
   }
 
@@ -57,7 +57,11 @@ var GroceryList = (function (_React$Component) {
       return React.createElement(
         "div",
         null,
-        "// Put your code here"
+        React.createElement(
+          "ul",
+          null,
+          React.createElement("li", null)
+        )
       );
     }
   }]);

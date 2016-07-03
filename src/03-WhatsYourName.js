@@ -114,7 +114,7 @@ var WhatsYourName = (function (_React$Component) {
     key: 'render',
     value: function render() {
       var displayName = 'Hello ' + this.state.name;
-      if (this.state.name.length <= 0) {
+      if (this.state.name.length === 0) {
         displayName = 'Hey there. Enter your name.';
       }
       return React.createElement(

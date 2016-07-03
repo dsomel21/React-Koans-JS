@@ -3,11 +3,11 @@
 var Answers = {
   // Question #1: What is the name of the class that we extend to create components class?
   // Tip: See any of the exercises
-  answer1: "Enter your answer here",
+  answer1: "React",
 
   // Question #2: JSX is converted directly into JavaScript. True or false?
   // Tip: See the first exercise.
-  answer2: null, // true/false?
+  answer2: true, // true/false?
 
   // Question #3: What's the name of the method that must be defined in every component?
   answer3: "FILL ME IN",
