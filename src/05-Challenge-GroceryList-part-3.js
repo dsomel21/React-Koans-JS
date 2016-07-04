@@ -64,8 +64,10 @@ var GroceryList = (function (_React$Component) {
     // Hint: You can just simply set the groceries to an empty array.
   }, {
     key: "clearList",
-    value: function clearList() {
-      // Put your code here
+    value: function clearList(e) {
+      this.setState({
+        groceries: []
+      });
     }
   }, {
     key: "render",
@@ -102,7 +104,8 @@ var GroceryList = (function (_React$Component) {
           groceriesComponents
         ),
         newProductInput,
-        newProductAddButton
+        newProductAddButton,
+        clearListButton
       );
     }
   }]);
