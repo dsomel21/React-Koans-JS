@@ -13,10 +13,11 @@ class GroceryList extends React.Component {
     super(props);
     this.state = {
       groceries: [ 
-        { name: "Bran Flakes" },
-        { name: "Low/No Fat Cheese"},
-        { name: "Sweet Potatoe" },
-        { name: "Yams" }
+        { name: "Apples" }
+        // ,
+        // { name: "Low/No Fat Cheese"},
+        // { name: "Sweet Potatoe" },
+        // { name: "Yams" }
       ]
     };
   }
@@ -41,7 +42,7 @@ class GroceryList extends React.Component {
     return (
       <div>
         <ul>
-          <li></li>
+          {groceriesComponents}
         </ul>
       </div>
     );
@@ -57,9 +58,9 @@ class GroceryListItem extends React.Component {
 
   render() {
     return (
-        <li>
-          // Put your code here.
-        </li>
+      <li>
+        {this.prop.name};
+      </li>
     );
   }
 }
