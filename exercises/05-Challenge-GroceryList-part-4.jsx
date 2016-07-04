@@ -1,4 +1,5 @@
 var React = require("react");
+var update = require('react-addons-update');
 
 // Task: Ok, now the last exercise. You have to implement toggling
 //       completeness of the each grocery list's item. Make each item reactive.
@@ -44,7 +45,7 @@ class GroceryList extends React.Component {
       groceries: [
         {
           name: "Apples",
-          completed: false
+          completed: true
         }
       ],
       newGroceryName: ""
@@ -75,7 +76,15 @@ class GroceryList extends React.Component {
   // Fill the definition of the following method to allow completing each item
   // Hint 1: Pay attention to the element's index on the list.
   toggleGroceryCompleteness(groceryIndex) {
-    // Put your code here
+    // debugger;
+    if (this.state.groceries[groceryIndex].completed){
+      // let toggleCompletion = {completed: false}
+      this.setState({
+        // toggleCompletion
+        groceries[groceryIndex].completed: false
+      });
+      console.log('-------------------------')
+    }
   }
 
   render() {

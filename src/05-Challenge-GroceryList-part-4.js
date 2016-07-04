@@ -79,6 +79,7 @@ var GroceryList = (function (_React$Component) {
   }, {
     key: "addGroceryItem",
     value: function addGroceryItem() {
+      debugger;
       if (this.state.newGroceryName) {
         var newGroceryItem = { name: this.state.newGroceryName };
         this.setState({
@@ -97,7 +98,17 @@ var GroceryList = (function (_React$Component) {
   }, {
     key: "toggleGroceryCompleteness",
     value: function toggleGroceryCompleteness(groceryIndex) {
-      // Put your code here
+      debugger;
+      // if (this.state.groceries[groceryIndex].completed){
+      //   this.setState({
+      //     groceries[groceriesIndex].complete = false;
+      //   })
+      // }
+      // else {
+      //   this.setState({
+      //     groceries[groceriesIndex].complete = true;
+      //   )}
+      // }
     }
   }, {
     key: "render",
