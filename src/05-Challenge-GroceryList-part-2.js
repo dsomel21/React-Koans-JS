@@ -63,7 +63,13 @@ var GroceryList = (function (_React$Component) {
   }, {
     key: "addGroceryItem",
     value: function addGroceryItem() {
-      // Put your code here
+      // debugger;
+      if (this.state.newGroceryName) {
+        var newItem = { name: this.state.newGroceryName };
+        this.setState({
+          groceries: this.state.groceries.concat([newItem])
+        });
+      }
     }
   }, {
     key: "render",
@@ -83,7 +89,7 @@ var GroceryList = (function (_React$Component) {
       // Something is missing here... Will anything happen if you click this button now?
       newProductAddButton = React.createElement(
         "button",
-        { className: "add-product" },
+        { className: "add-product", onClick: this.addGroceryItem },
         "Add new Product"
       );
 
@@ -94,7 +100,9 @@ var GroceryList = (function (_React$Component) {
           "ul",
           null,
           groceriesComponents
-        )
+        ),
+        newProductInput,
+        newProductAddButton
       );
     }
   }]);
