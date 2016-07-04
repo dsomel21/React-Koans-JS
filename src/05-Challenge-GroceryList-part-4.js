@@ -8,11 +8,14 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var React = require("react");
+var update = require('react-addons-update');
 
 // Task: Ok, now the last exercise. You have to implement toggling
 //       completeness of the each grocery list's item. Make each item reactive.
@@ -79,7 +82,6 @@ var GroceryList = (function (_React$Component) {
   }, {
     key: "addGroceryItem",
     value: function addGroceryItem() {
-      debugger;
       if (this.state.newGroceryName) {
         var newGroceryItem = { name: this.state.newGroceryName };
         this.setState({
@@ -98,16 +100,16 @@ var GroceryList = (function (_React$Component) {
   }, {
     key: "toggleGroceryCompleteness",
     value: function toggleGroceryCompleteness(groceryIndex) {
-      debugger;
+      var inComplete = update(this.state, {
+        groceries: _defineProperty({}, groceryIndex, {
+          completed: { $set: true }
+        })
+      });
+      // debugger;
       // if (this.state.groceries[groceryIndex].completed){
-      //   this.setState({
-      //     groceries[groceriesIndex].complete = false;
-      //   })
-      // }
-      // else {
-      //   this.setState({
-      //     groceries[groceriesIndex].complete = true;
-      //   )}
+      this.setState({
+        inComplete: inComplete
+      });
       // }
     }
   }, {

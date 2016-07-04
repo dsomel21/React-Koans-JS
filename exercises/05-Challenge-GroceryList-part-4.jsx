@@ -45,7 +45,7 @@ class GroceryList extends React.Component {
       groceries: [
         {
           name: "Apples",
-          completed: true
+          completed: false
         }
       ],
       newGroceryName: ""
@@ -76,15 +76,19 @@ class GroceryList extends React.Component {
   // Fill the definition of the following method to allow completing each item
   // Hint 1: Pay attention to the element's index on the list.
   toggleGroceryCompleteness(groceryIndex) {
+    var inComplete = update(this.state, {
+      groceries: {
+        [groceryIndex]: {
+          completed: {$set: true }
+        }
+      }
+    });
     // debugger;
-    if (this.state.groceries[groceryIndex].completed){
-      // let toggleCompletion = {completed: false}
-      this.setState({
-        // toggleCompletion
-        groceries[groceryIndex].completed: false
-      });
-      console.log('-------------------------')
-    }
+    // if (this.state.groceries[groceryIndex].completed){
+    this.setState(
+      inComplete
+    );
+    // }
   }
 
   render() {
