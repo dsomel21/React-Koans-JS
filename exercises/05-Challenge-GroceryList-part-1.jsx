@@ -13,7 +13,7 @@ class GroceryList extends React.Component {
     super(props);
     this.state = {
       groceries: [ 
-        { name: "Apples" }
+        { id: 0, name: "Apples" }
         // ,
         // { name: "Low/No Fat Cheese"},
         // { name: "Sweet Potatoe" },
@@ -32,7 +32,7 @@ class GroceryList extends React.Component {
     // We have defined a `grocery` property for each `GroceryListItem`.
     for(var index = 0; index < this.state.groceries.length; index++) {
       groceriesComponents.push(
-          <GroceryListItem
+          <GroceryListItem key={this.state.groceries[index].id}
             grocery={this.state.groceries[index]}
           />
       );
@@ -59,7 +59,7 @@ class GroceryListItem extends React.Component {
   render() {
     return (
       <li>
-        {this.prop.name};
+        {this.props.grocery.name}
       </li>
     );
   }

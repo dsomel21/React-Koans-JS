@@ -30,7 +30,7 @@ var GroceryList = (function (_React$Component) {
 
     _get(Object.getPrototypeOf(GroceryList.prototype), "constructor", this).call(this, props);
     this.state = {
-      groceries: [{ name: "Apples" }
+      groceries: [{ id: 0, name: "Apples" }
       // ,
       // { name: "Low/No Fat Cheese"},
       // { name: "Sweet Potatoe" },
@@ -53,7 +53,7 @@ var GroceryList = (function (_React$Component) {
       // Below you can see how to pass properties to child components.
       // We have defined a `grocery` property for each `GroceryListItem`.
       for (var index = 0; index < this.state.groceries.length; index++) {
-        groceriesComponents.push(React.createElement(GroceryListItem, {
+        groceriesComponents.push(React.createElement(GroceryListItem, { key: this.state.groceries[index].id,
           grocery: this.state.groceries[index]
         }));
       }
@@ -89,8 +89,7 @@ var GroceryListItem = (function (_React$Component2) {
       return React.createElement(
         "li",
         null,
-        this.prop.name,
-        ";"
+        this.props.grocery.name
       );
     }
   }]);
